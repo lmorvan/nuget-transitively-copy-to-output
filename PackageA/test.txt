@@ -1,0 +1,1 @@
+This file is needed at runtime and MUST be copied to the bin folder of the final application.
