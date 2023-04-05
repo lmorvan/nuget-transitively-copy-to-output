@@ -1,10 +1,8 @@
 ﻿namespace PackageB;
-public class Class1
+public static class Class1
 {
-    private readonly PackageA.Class1 instance;
-
-    public Class1()
+    public static void Run()
     {
-        instance = new PackageA.Class1();
+        PackageA.Class1.Run();
     }
 }

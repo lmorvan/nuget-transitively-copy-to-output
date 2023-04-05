@@ -1,8 +1,8 @@
-﻿namespace PackageC;
+﻿namespace Intermediate;
 public static class Class1
 {
     public static void Run()
     {
-        PackageB.Class1.Run();
+        PackageC.Class1.Run();
     }
 }

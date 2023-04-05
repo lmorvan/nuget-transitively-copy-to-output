@@ -1,7 +1,7 @@
 Remove-Item *.nupkg
 
  # Update me to bypass cache!!!!
-$packVersions = "1.0.0-test.21"
+$packVersions = "1.0.0-test.32"
 
 dotnet pack PackageA/PackageA.csproj -o . /p:PackVersions=$packVersions
 dotnet pack PackageB/PackageB.csproj -o . /p:PackVersions=$packVersions
@@ -38,3 +38,4 @@ function Test($project) {
 Test "ProjectConsumingA"
 Test "ProjectConsumingB"
 Test "ProjectConsumingC"
+Test "FinalApplication"

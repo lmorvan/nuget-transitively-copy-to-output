@@ -1,1 +1,1 @@
-﻿var class1 = new PackageB.Class1();
+﻿PackageB.Class1.Run();

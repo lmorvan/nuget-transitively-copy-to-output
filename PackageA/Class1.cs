@@ -1,7 +1,9 @@
-﻿namespace PackageA;
-public class Class1
+﻿using System.IO;
+
+namespace PackageA;
+public static class Class1
 {
-    public Class1()
+    public static void Run()
     {
         if (File.Exists("test.txt"))
         {
