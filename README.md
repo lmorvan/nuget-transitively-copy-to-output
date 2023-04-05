@@ -20,12 +20,14 @@ When running the script `Check.ps1`, you can see these lines in the output, afte
 ```log
 =============================================
 test.txt has been successfully copied to ProjectConsumingA/bin/Debug/net7.0.
+PackageA can run as expected.
 =============================================
 ```
 and after publish:
 ```log
 =============================================
 test.txt has been successfully copied to ProjectConsumingA/bin/Debug/net7.0/publish.
+PackageA can run as expected.
 =============================================
 ```
 
@@ -37,12 +39,14 @@ Again, with the script `Check.ps1`, you can see, after build:
 ```log
 =============================================
 test.txt has NOT been copied to ProjectConsumingB/bin/Debug/net7.0.
+PackageA cannot run.
 =============================================
 ```
 and after publish:
 ```log
 =============================================
 test.txt has NOT been copied to ProjectConsumingB/bin/Debug/net7.0/publish.
+PackageA cannot run.
 =============================================
 ```
 
