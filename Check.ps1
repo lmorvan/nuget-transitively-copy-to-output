@@ -1,10 +1,11 @@
 Remove-Item *.nupkg
 
  # Update me to bypass cache!!!!
-$packVersions = "1.0.0"
+$packVersions = "1.0.0-test.21"
 
 dotnet pack PackageA/PackageA.csproj -o . /p:PackVersions=$packVersions
 dotnet pack PackageB/PackageB.csproj -o . /p:PackVersions=$packVersions
+dotnet pack PackageC/PackageC.csproj -o . /p:PackVersions=$packVersions
 
 function DidCopied($outputPath) {
     if (Test-Path $outputPath/test.txt) {
@@ -36,3 +37,4 @@ function Test($project) {
 
 Test "ProjectConsumingA"
 Test "ProjectConsumingB"
+Test "ProjectConsumingC"
