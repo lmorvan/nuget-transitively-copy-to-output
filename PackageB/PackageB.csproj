@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PackageA\PackageA.csproj" />
+    <ProjectReference Include="../PackageA/PackageA.csproj">
+      <PrivateAssets>analyzers;build</PrivateAssets>
+    </ProjectReference>
   </ItemGroup>
 
 </Project>
