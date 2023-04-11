@@ -1,1 +1,1 @@
-﻿Intermediate.Class1.Run();
+﻿Intermediate.ClassIntermediate.Run();

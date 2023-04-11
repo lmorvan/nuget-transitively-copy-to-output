@@ -1,16 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <ItemGroup>
-    <ProjectReference Include="..\PackageB\PackageB.csproj">
-      <PrivateAssets>analyzers;build</PrivateAssets>
-    </ProjectReference>
-  </ItemGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>$(PackVersions)</Version>
+    <IsPackable>True</IsPackable>
+    <IsPublishable>False</IsPublishable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PackageB\PackageB.csproj" />
+  </ItemGroup>
 
 </Project>

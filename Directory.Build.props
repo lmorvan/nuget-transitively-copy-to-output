@@ -1,0 +1,9 @@
+<Project>
+
+  <PropertyGroup>
+    <!-- Update me to bypass cache!!!! -->
+    <PackVersions>1.0.0-test.51</PackVersions>
+    <Version>$(PackVersions)</Version>
+  </PropertyGroup>  
+
+</Project>

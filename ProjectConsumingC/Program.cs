@@ -1,1 +1,1 @@
-﻿PackageC.Class1.Run();
+﻿PackageC.ClassC.Run();

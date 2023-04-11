@@ -1,8 +1,8 @@
 ﻿namespace PackageB;
-public static class Class1
+public static class ClassB
 {
     public static void Run()
     {
-        PackageA.Class1.Run();
+        PackageA.ClassA.Run();
     }
 }

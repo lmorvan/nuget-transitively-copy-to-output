@@ -1,11 +1,11 @@
 Remove-Item *.nupkg
+Remove-Item -Recurse **/bin
+Remove-Item -Recurse **/obj
+Remove-Item -Recurse **/publish
 
- # Update me to bypass cache!!!!
-$packVersions = "1.0.0-test.32"
-
-dotnet pack PackageA/PackageA.csproj -o . /p:PackVersions=$packVersions
-dotnet pack PackageB/PackageB.csproj -o . /p:PackVersions=$packVersions
-dotnet pack PackageC/PackageC.csproj -o . /p:PackVersions=$packVersions
+dotnet pack PackageA/PackageA.csproj -o .
+dotnet pack PackageB/PackageB.csproj -o .
+dotnet pack PackageC/PackageC.csproj -o .
 
 function DidCopied($outputPath) {
     if (Test-Path $outputPath/test.txt) {
@@ -15,24 +15,21 @@ function DidCopied($outputPath) {
     }
 }
 
+function DoTest($folder, $project) {
+    Write-Output "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
+    DidCopied $folder
+    Push-Location $folder
+    dotnet ./$project.dll
+    Pop-Location
+    Write-Output "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+}
+
 function Test($project) {
-    dotnet restore --no-cache $project /p:PackVersions=$packVersions
+    dotnet build $project -o $project/bin
+    DoTest $project/bin/ $project
 
-    dotnet build --no-restore $project /p:PackVersions=$packVersions
-    Write-Output "============================================="
-    DidCopied $project/bin/Debug/net7.0
-    Push-Location $project/bin/Debug/net7.0/
-    dotnet ./$project.dll
-    Pop-Location
-    Write-Output "============================================="
-
-    dotnet publish --no-build $project /p:PackVersions=$packVersions
-    Write-Output "============================================="
-    DidCopied $project/bin/Debug/net7.0/publish
-    Push-Location $project/bin/Debug/net7.0/publish/
-    dotnet ./$project.dll
-    Pop-Location
-    Write-Output "============================================="
+    dotnet publish -r win-x64 $project --no-self-contained -o $project/publish
+    DoTest $project/publish/ $project
 }
 
 Test "ProjectConsumingA"

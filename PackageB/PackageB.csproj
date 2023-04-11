@@ -1,16 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>$(PackVersions)</Version>
+    <IsPackable>True</IsPackable>
+    <IsPublishable>False</IsPublishable>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../PackageA/PackageA.csproj">
-      <PrivateAssets>analyzers;build</PrivateAssets>
-    </ProjectReference>
+    <ProjectReference Include="../PackageA/PackageA.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,8 @@
 ﻿namespace Intermediate;
-public static class Class1
+public static class ClassIntermediate
 {
     public static void Run()
     {
-        PackageC.Class1.Run();
+        PackageC.ClassC.Run();
     }
 }
